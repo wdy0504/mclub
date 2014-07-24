@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      Pomelo
+    </title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta http-equiv="content-style-type" content="text/css" />
+    <meta http-equiv="content-scripte-type" content="text/javascript" />
+    <script src="js/lib/jquery-1.8.0.min.js"></script>
+    <script src="js/lib/socket.io.js"></script>
+    <script src="js/lib/pomeloclient.js"></script>
+    <script src="js/client.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+<div class="body">
+	<div class="con">
+    <span id="tip"></span><br/>
+		<div class="register">
+    注册电话<input id="regPhoneNumber" type="text"><br/>
+    注册密码<input id="regPassword" type="text"><br/>
+    <input id="register" type="button" value="register" /><br/>
+		</div>
+		<div class="login">
+    电话号码<input id="loginPhoneNumber" type="text"><br/>
+    密码<input id="loginPassword" type="text"><br/>
+    <input id="login" type="button" value="login" /><br/>
+		</div>
+	</div>
+  <div class="con">
+    <span id="tip1"></span><br/>
+    <div class="register">
+    昵称<input id="name" type="text"><br/>
+    头像url<input id="headimgurl" type="text"><br/>
+    性别  <select name="sex" id="sex">
+          <option value="0">保密</option>
+          <option value="1">男</option>
+          <option value="2">女</option>
+        </select><br/>
+    学校名字<input id="schoolname" type="text"><br/>
+    证件url<input id="papersUrl" type="text"><br/>
+    <input id="updateUserInfo" type="button" value="更新用户信息" />
+    </div>
+  </div>
+  <div class="con">
+    <span id="tip8"></span><br/>
+    <input id="getMyInfo" type="button" value="获取我的信息" />
+      <table id="myInfo" class="table">
+    </table>
+  </div>
+	<div class="con">
+    <span id="tip2"></span><br/>
+    商品名<input id="commodityName" type="text"><br/>
+    商品类型
+        <select name="classifyType" id="classifyType">
+          <option value="1">数码</option>
+          <option value="2">日用品</option>
+          <option value="3">书籍</option>
+        </select> <br/>
+    商品发布类型
+    <select name="status" id="status">
+          <option value="1">出售</option>
+          <option value="2">求购</option>
+        </select><br/>
+    商品标签<input id="label" type="text"><br/>
+    商品描述<input id="commodityDescription" type="text"><br/>
+    商品支付类型
+     <select name="paymentType" id="paymentType">
+          <option value="1">金钱</option>
+          <option value="2">给我一杯奶茶</option>
+          <option value="3">请我吃饭</option>
+        </select>
+        <br/>
+    商品支付金额<input id="payValue" type="text"><br/>
+    商品支付描述<input id="paymentDes" type="text"><br/>
+    商品图片url<input id="commodityPicUrl" type="text"><br/>
+    声音url<input id="soundUrl" type="text"><br/>
+    商品有效时间类型
+      <select name="effectTimeType" id="effectTimeType">
+          <option value="1">3天</option>
+          <option value="2">9天</option>
+          <option value="3">15天</option>
+        </select><br/>
+    商品地址x<input id="locationX" type="text"><br/>
+    商品地址y<input id="locationY" type="text"><br/>
+    <input id="addcommodity" type="button" value="新建商品" />
+	</div>
+  <div class="con1">
+    <span id="tip3"></span><br/>
+    <input id="getMyCommodities" type="button" value="获取自己商品列表" />
+    <table id="myCommodities" class="table">
+    </table>
+  </div>
+  <div class="con1">
+    <span id="tip4"></span><br/>
+    商品发布类型
+     <select name="commoditiyStatus" id="commoditiyStatus">
+          <option value="1">出售</option>
+          <option value="2">求购</option>
+        </select><br/>
+    商品类型
+            <select name="commoditiyClassifyType" id="commoditiyClassifyType">
+          <option value="1">数码</option>
+          <option value="2">日用品</option>
+          <option value="3">书籍</option>
+        </select> <br/>
+    地址x<input id="adressX" type="text"><br/>
+    地址y<input id="adressY" type="text"><br/>
+    <input id="getCommodities" type="button" value="获取附近的商品列表" />
+    <table id="commodities" class="table">
+    </table>
+  </div>
+	<div class="con">
+    <span id="tip5"></span><br/>
+  回复商品id<br/><input id="replyCommodityId" type="text"><br/>
+  回复内容<br/><input id="replyContent" type="text"><br/>
+  <input id="addComment" type="button" value="回复" />
+	</div>
+  <div class="con1">
+    <span id="tip6"></span><br/>
+    商品id<input id="commentCommoditiyId" type="text">
+    <input id="getComments" type="button" value="获取评论列表" />
+    <table id="comments" class="table">
+    </table>
+  </div>
+
+  <div class="con1">
+     <span id="tip7"></span><br/>
+      <input id="getMyComments" type="button" value="获取我的评论列表" />
+      <table id="myComments" class="table">
+    </table>
+  </div>
+</div>
+  </body>
+</html>
