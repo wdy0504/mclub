@@ -1,5 +1,5 @@
 var pomelo = require('pomelo');
-var httpPlugin = require('pomelo-http-plugin');
+var httpPlugin = require('./app/pomelo-http-plugin');
 var path = require('path');
 /**
  * Init app for client.
