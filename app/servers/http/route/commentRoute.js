@@ -11,7 +11,7 @@ module.exports = function(app, http) {
 			next();
 		} else {
 			res.send({
-				error: 101
+				error: Constants.ERROR.USER_NOT_LOGIN
 			});
 			return;
 		}
@@ -37,7 +37,7 @@ module.exports = function(app, http) {
 		redisClient.hgetall(req.session.userid, function(err, retRedis) {
 			if (err) {
 				res.send({
-					error: 102
+					error: Constants.ERROR.SYS_ERROR
 				});
 				return;
 			}
@@ -49,7 +49,7 @@ module.exports = function(app, http) {
 			//判断每天评论的次数是否已经超过限制
 			if (parseInt(retRedis.commentAmount) >= 300 && parseInt(retRedis.commentDay) === day) {
 				res.send({
-					error: 3
+					error: 2
 				});
 				return;
 			}
@@ -66,7 +66,7 @@ module.exports = function(app, http) {
 			CommentDao.addComment(comment, function(err) {
 				if (err) {
 					res.send({
-						error: 102
+						error: Constants.ERROR.SYS_ERROR
 					});
 				} else {
 					res.send({
@@ -101,7 +101,7 @@ module.exports = function(app, http) {
 		CommentDao.getCommentsByCommodityId(commodityId, function(err, result) {
 			if (err) {
 				res.send({
-					error: 102
+					error: Constants.ERROR.SYS_ERROR
 				});
 			} else {
 
@@ -120,7 +120,7 @@ module.exports = function(app, http) {
 		CommentDao.getCommentsByUserId(req.session.userid, function(err, result) {
 			if (err) {
 				res.send({
-					error: 102
+					error: Constants.ERROR.SYS_ERROR
 				});
 			} else {
 				res.send({
