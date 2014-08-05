@@ -3,7 +3,7 @@ var User = require('../../../domain/user');
 var redisClient = require('../../../models/redisClient');
 var Constants = require('../../../util/constants');
 var JPush = require('jpush-sdk');
-var jpushClient = JPush.buildClient('you appKey', 'your masterSecret');
+//var jpushClient = JPush.buildClient('you appKey', 'your masterSecret');
 
 module.exports = function(app, http) {
 
@@ -46,7 +46,7 @@ module.exports = function(app, http) {
 				return;
 			}
 			//推送消息
-			jpushClient.push().setPlatform(JPush.All)
+		/*	jpushClient.push().setPlatform(JPush.All)
 				.setAudience(JPush.tag(tagUserId))
 				.setNotification(content)
 				.send(function(err, res) {
@@ -62,7 +62,7 @@ module.exports = function(app, http) {
 						});
 						return;
 					}
-				});
+				});*/
 		});
 	});
 

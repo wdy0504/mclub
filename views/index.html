@@ -132,6 +132,43 @@
       <table id="myComments" class="table">
     </table>
   </div>
+   <div class="con1">
+      <span id="tip10"></span><br/>
+       <input id="getToken" type="button" value="获取Token" />
+  </div>
+  <div class="con1">
+    <span id="tip11"></span><br/>
+  <!--  <form method="post" action="http://upload.qiniu.com/" enctype="multipart/form-data">
+        token:<input id="token" name="token" ><br/>
+        key:<input id="key" name="key">
+        file:<input name"file" type="file">
+        <input  type="submit" />
+    </form>-->
+    <form method="post" action="http://up.qiniu.com" enctype="multipart/form-data">
+    <ul>
+        <li>
+            <label for="token">token:</label>
+            <input id="token" name="token"  value="">
+
+        </li>
+      <!--    <li>
+            <label for="key">key:</label>
+            <input name="key"  value="">
+        </li>-->
+    <!--      <li>
+            <label for="x:username">姓名(自定义变量):</label>
+            <input name="x:username"  value="">
+        </li>-->
+        <li>
+            <label for="bucket">照片:</label>
+            <input name="file"  type="file">
+        </li>
+        <li>
+            <input type="submit" value="提交">
+        </li>
+    </ul>
+</form>
+  </div>
 </div>
   </body>
 </html>

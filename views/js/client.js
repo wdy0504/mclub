@@ -377,5 +377,14 @@ $(document).ready(function() {
 		console.log("getMyComments");
 		getMyComments();
 	});
+	$("#getToken").click(function() {
+		console.log("getToken");
+		var route = "upload/getToken";
 
+		postfunc(route, null, function(data) {
+			//$('#tip10').text(data.uptoken);
+			$('#token').val(data.uptoken);
+
+		});
+	});
 });
